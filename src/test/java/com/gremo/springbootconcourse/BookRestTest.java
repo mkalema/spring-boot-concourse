@@ -10,7 +10,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItems;
 
 public class BookRestTest {
-
+    // trigger ci
     @BeforeEach
     public void setup(){
         RestAssured.port = Integer.valueOf(8080);
