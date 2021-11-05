@@ -1,0 +1,16 @@
+resources:
+  - name: spring-boot-concourse
+    type: git
+    check_every: 10s
+    source:
+      uri: https://github.com/mkalema/spring-boot-concourse.git
+      branch: dev-concourse
+
+jobs:
+  - name: build
+    public: true
+    plan:
+      - get: spring-boot-concourse
+        trigger: true
+      - task: Build Project
+        file: spring-boot-concourse/concourse/tasks/build.yml
